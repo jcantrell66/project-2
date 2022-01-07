@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
+var indexRouter = require('./routes/index');
 
 // load the env vars
 require('dotenv').config();
@@ -30,7 +31,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-// mount the session middleware
+// mount the session middleware, to get the user cookie
 app.use(session({
   secret: 'SEI Rocks!',
   resave: false,
@@ -49,7 +50,7 @@ app.use(function (req, res, next) {
 });
 
 // mount all routes with appropriate base paths
-app.use('/', indexRoutes);
+app.use('/', indexRouter);
 
 
 // invalid request, send 404 page
