@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+<p><%= user._id %></p>
+
+<p>Create a business:</p>
+<form id="new-form" action="/businesses" method="POST">
+    <label>Business name:</label>
+    <input type="text" name="name"/>
+    <label>Current income:</label>
+    <input type="number" name="income"/>
+    <input type="submit" value="Create Business"/>
+  </form>
+
+<%- include('../partials/footer') %>

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 
 const expenseSchema = new mongoose.Schema({
@@ -9,11 +10,10 @@ const expenseSchema = new mongoose.Schema({
 
 const businessSchema = new mongoose.Schema({
     income: Number,
-    email: String,
-    googleId: String,
+    name: String,
     expenses: [expenseSchema],
     customers: [{type: Schema.Types.ObjectId, ref: 'Customer'}],
-    employees: [{type: Schema.Types.ObjectId, ref: 'User'}]
+    employee: {type: Schema.Types.ObjectId, ref: 'User'}
 })
 
 

@@ -1,5 +1,20 @@
 <%- include('../partials/header') %>
-
+<p><%= user._id %></p>
 <p>Businesses</p>
+
+<% if (business){ %> 
+    <p><%= business[0].name %></p>
+    <p><%= business[0].income %></p>
+    <p><%= business[0].expenses %></p>
+    <a href="/businesses/<%= business[0]._id %>/customers/new"> Add a New Customer</a>
+
+
+<% } else { %> 
+    <p>No business created.</p>
+    <a href="/businesses/new"> Create a business here</a>
+
+
+<% } %>
+
 
 <%- include('../partials/footer') %>
