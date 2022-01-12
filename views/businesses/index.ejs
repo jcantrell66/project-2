@@ -2,11 +2,28 @@
 <p><%= user._id %></p>
 <p>Businesses</p>
 
-<% if (business){ %> 
+<% if (business !== undefined){ %>
+    <% let incomeCounter = 0; %> 
+    <% let expenseCounter = 0; %> 
     <p><%= business[0].name %></p>
-    <p><%= business[0].income %></p>
-    <p><%= business[0].expenses %></p>
+
+    <% business[0].incomes.forEach(function(i) { %> 
+        <% incomeCounter += i.amount %> 
+    <% }); %>
+    <p>Income: <%= incomeCounter %></p>
+
+
+
+    <% business[0].expenses.forEach(function(e) { %> 
+        <% expenseCounter += e.price %> 
+    <% }); %>
+    <p>Expenses: <%= expenseCounter %></p>
+
+
     <a href="/businesses/<%= business[0]._id %>/customers/new"> Add a New Customer</a>
+    <a href="/businesses/<%= business[0]._id %>/expenses/new"> Add Expenses</a>
+    <a href="/businesses/<%= business[0]._id %>/income/new"> Add Income</a>
+
 
 
 <% } else { %> 

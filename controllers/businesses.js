@@ -18,6 +18,7 @@ function newBusiness(req, res) {
 
 function index(req, res, next) {
     Business.find({employee: req.user._id}, function (err, businessDoc) {
+        // console.log(!businessDoc, '<= businessDoc')
         res.render('businesses/index', {
         business: businessDoc
         });
@@ -30,7 +31,7 @@ function create(req, res) {
     Business.create(req.body, function(err, businessDoc){
         businessDoc.employee = req.user._id;
         businessDoc.save(function(err){
-            res.redirect('businesses/index');
+            res.redirect('businesses');
         })
     })
 }

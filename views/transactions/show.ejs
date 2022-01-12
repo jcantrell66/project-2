@@ -1,0 +1,50 @@
+<%- include('../partials/header') %>
+<p><%= user._id %></p>
+
+<p>Income item:</p>
+
+<% if (business.incomes.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% business.incomes.forEach(function(i) { %>
+          <tr>
+            <td><%= i.item %></td>
+            <td><%= i.amount %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Income Added</h5>
+  <% } %>
+
+  <p>Expense item:</p>
+
+<% if (business.expenses.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% business.expenses.forEach(function(e) { %>
+          <tr>
+            <td><%= e.item %></td>
+            <td><%= e.price %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Expenses Added</h5>
+  <% } %>
+
+<%- include('../partials/footer') %>

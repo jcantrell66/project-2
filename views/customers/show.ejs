@@ -1,8 +1,26 @@
 <%- include('../partials/header') %>
 <p><%= user._id %></p>
 
-
-
+<% if (business.customers.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% business.customers.forEach(function(c) { %>
+          <tr>
+            <td><%= c.name %></td>
+            <td><%= c.address %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Customers Added</h5>
+  <% } %>
 
 
 <%- include('../partials/footer') %>

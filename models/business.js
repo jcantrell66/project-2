@@ -3,15 +3,19 @@ const Schema = mongoose.Schema;
 
 
 const expenseSchema = new mongoose.Schema({
-    amount: Number,
-    type: String
+    price: Number,
+    item: String
 })
 
+const incomeSchema = new mongoose.Schema({
+    amount: Number,
+    item: String
+})
 
 const businessSchema = new mongoose.Schema({
-    income: Number,
     name: String,
     expenses: [expenseSchema],
+    incomes: [incomeSchema],
     customers: [{type: Schema.Types.ObjectId, ref: 'Customer'}],
     employee: {type: Schema.Types.ObjectId, ref: 'User'}
 })
@@ -19,4 +23,4 @@ const businessSchema = new mongoose.Schema({
 
 
 
-module.exports = mongoose.model('Business', businessSchema)
+module.exports = mongoose.model('Business', businessSchema);

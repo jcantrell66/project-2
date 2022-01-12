@@ -23,6 +23,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var businessesRouter = require('./routes/businesses');
 var customersRouter = require('./routes/customers');
+var transactionsRouter = require('./routes/transactions');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -56,6 +57,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/', businessesRouter);
 app.use('/', customersRouter);
+app.use('/', transactionsRouter);
 
 
 // invalid request, send 404 page

@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+<p><%= user._id %></p>
+
+
+<p>Add Expenses</p>
+  <form id="add-performer-form" action="/businesses/<%- businessId %>/expenses" method="POST">
+    <label>Item:</label>
+    <input type="text" name="item">
+    <label>Price:</label>
+    <input type="number" name="price">
+    <input type="submit" value="Add Expense">
+  </form>
+
+
+<%- include('../partials/footer') %>
