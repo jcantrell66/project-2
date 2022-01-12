@@ -5,7 +5,9 @@ var customersCtrl = require('../controllers/customers.js');
 router.get('/businesses/:id/customers/new', customersCtrl.new);
 router.get('/businesses/customers', customersCtrl.show);
 router.post('/businesses/:id/customers', customersCtrl.create);
-
+router.delete('/businesses/:id/customers/:id', customersCtrl.delete);
+router.get('/businesses/:id/customers/:id/edit', customersCtrl.edit);
+router.put('/businesses/:id/customers/:id', customersCtrl.update);
 
 
 // router.post('/facts', isLoggedIn, businessesCtrl.addBusiness);

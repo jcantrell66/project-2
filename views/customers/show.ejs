@@ -14,6 +14,15 @@
           <tr>
             <td><%= c.name %></td>
             <td><%= c.address %></td>
+            <td>
+            <form action="/businesses/<%= business._id %>/customers/<%= c._id %>?_method=DELETE"
+                class="delete-form" method="POST">
+                <button type="submit">X</button>
+              </form>
+            </td>
+            <td>
+                <a href="/businesses/<%= business._id %>/customers/<%= c._id %>/edit">Edit Customer</a>
+            </td>
           </tr>
         <% }); %>
       </tbody>
