@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
-<p><%= user._id %></p>
+
+<h3>Customer List</h3>
 
 <% if (business.customers.length) { %>
     <table>
@@ -21,10 +22,15 @@
               </form>
             </td>
             <td>
-                <a href="/businesses/<%= business._id %>/customers/<%= c._id %>/edit">Edit Customer</a>
+                <a href="/businesses/<%= business._id %>/customers/<%= c._id %>/edit">Edit</a>
             </td>
           </tr>
         <% }); %>
+        <tr>
+          <td class='add-more'>
+            <a href="/businesses/<%= business._id %>/customers/new">+</a>
+          </td>
+      </tr>
       </tbody>
     </table>
   <% } else { %>

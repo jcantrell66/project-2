@@ -1,3 +1,94 @@
+body {
+  background-color: #E8ECEB;
+}
+
+body > nav {
+  grid-area: nav;
+  background-color: #B8C0C2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
+}
+
+nav > a:hover {
+  color: white;
+  background-color: #424748;
+}
+
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E8ECEB;
+  padding: 20px;
+}
+
+main > #transactions {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 50px;
+}
+
+#home-section {
+  border: 3px solid #424748;
+  border-radius: 3px;
+  padding: 10px 30px 30px 30px;
+}
+
+h4 {
+  padding: 5px;
+  border-bottom: 2px solid #424748;
+  margin: 5px;
+}
+
+h3 {
+  text-align: center;
+}
+
+#business-name {
+  text-decoration: underline;
+}
+
+table {
+  font-size: 15px;
+}
+
+table thead th {
+  padding: 5px;
+  border-bottom: 2px solid #424748;
+}
+
+table td {
+  padding: 5px;
+  text-align: center;
+}
+
+table td.add-more {
+  border: 2px solid #424748;
+  border-radius: 5px;
+}
+
+table td.revenue {
+  border-top: 1px solid #424748;
+  border-bottom: medium double #424748;
+  padding-bottom: 1px;
+}
+
+table td a {
+  color: black;
+  text-decoration: none;
+}
+
 .brand-logo {
   margin-left: 15px;
 }
@@ -18,3 +109,5 @@
 .collection-item form {
   margin-top: -5px;
 }
+
+

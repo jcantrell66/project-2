@@ -1,29 +1,37 @@
 <%- include('../partials/header') %>
-<p><%= user._id %></p>
-<p>Businesses</p>
 
 <% if (business !== undefined){ %>
     <% let incomeCounter = 0; %> 
     <% let expenseCounter = 0; %> 
-    <p><%= business[0].name %></p>
+    <h3 id='business-name'><%= business[0].name %></h3><br>
 
     <% business[0].incomes.forEach(function(i) { %> 
         <% incomeCounter += i.amount %> 
     <% }); %>
-    <p>Income: <%= incomeCounter %></p>
-
-
 
     <% business[0].expenses.forEach(function(e) { %> 
         <% expenseCounter += e.price %> 
     <% }); %>
-    <p>Expenses: <%= expenseCounter %></p>
+    <section id='home-section'>
+    <h4>Income Statement</h4>
 
-
-    <a href="/businesses/<%= business[0]._id %>/customers/new"> Add a New Customer</a>
-    <a href="/businesses/<%= business[0]._id %>/expenses/new"> Add Expenses</a>
-    <a href="/businesses/<%= business[0]._id %>/income/new"> Add Income</a>
-
+        <table>
+            <tbody>
+                <tr>
+                  <td>Income:</td>
+                  <td><%= `$${incomeCounter}` %></td>
+              </tr>
+              <tr>
+                  <td>Expenses:</td>
+                  <td><%= `$${expenseCounter}` %></td>
+              </tr>
+              <tr>
+                <td>Revenue:</td>
+                <td class='revenue'><%= `$${incomeCounter-expenseCounter}` %></td>
+            </tr>
+            </tbody>
+          </table>
+        </section>
 
 
 <% } else { %> 

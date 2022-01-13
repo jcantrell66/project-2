@@ -1,7 +1,8 @@
 <%- include('../partials/header') %>
-<p><%= user._id %></p>
 
-<p>Income item:</p>
+<div id='transactions'>
+    <section>
+<h3>Income items</h3>
 
 <% if (business.incomes.length) { %>
     <table>
@@ -15,16 +16,23 @@
         <% business.incomes.forEach(function(i) { %>
           <tr>
             <td><%= i.item %></td>
-            <td><%= i.amount %></td>
-          </tr>
+            <td><%= `$${i.amount}` %></td>
+        </tr>
         <% }); %>
+        <tr>
+            <td class='add-more'>
+                <a href="/businesses/<%= business._id %>/income/new">+</a>
+            </td>
+        </tr>
       </tbody>
     </table>
   <% } else { %>
     <h5>No Income Added</h5>
   <% } %>
+</section>
 
-  <p>Expense item:</p>
+<section>
+  <h3>Expense items</h3>
 
 <% if (business.expenses.length) { %>
     <table>
@@ -38,13 +46,20 @@
         <% business.expenses.forEach(function(e) { %>
           <tr>
             <td><%= e.item %></td>
-            <td><%= e.price %></td>
+            <td><%= `$${e.price}` %></td>
           </tr>
         <% }); %>
+        <tr>
+            <td class='add-more'>
+                <a href="/businesses/<%= business._id %>/expenses/new">+</a>
+            </td>
+        </tr>
       </tbody>
     </table>
   <% } else { %>
     <h5>No Expenses Added</h5>
   <% } %>
+</section>
+</div>
 
 <%- include('../partials/footer') %>
