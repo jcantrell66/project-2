@@ -1,11 +1,9 @@
 <%- include('../partials/header') %>
 
-
-
-<p>Add Expenses</p>
+<h3>Add Expenses</h3>
   <form id="add-performer-form" action="/businesses/<%- businessId %>/expenses" method="POST">
     <label>Item:</label>
-    <input type="text" name="item">
+    <input type="text" name="item"><br>
     <label>Price:</label>
     <input type="number" name="price">
     <input type="submit" value="Add Expense">

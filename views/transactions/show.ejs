@@ -28,6 +28,7 @@
     </table>
   <% } else { %>
     <h5>No Income Added</h5>
+    <a href="/businesses/<%= business._id %>/income/new">Add income</a>
   <% } %>
 </section>
 
@@ -58,6 +59,7 @@
     </table>
   <% } else { %>
     <h5>No Expenses Added</h5>
+    <a href="/businesses/<%= business._id %>/expenses/new">Add expenses</a>
   <% } %>
 </section>
 </div>

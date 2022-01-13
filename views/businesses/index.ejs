@@ -1,6 +1,28 @@
-<%- include('../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
 
-<% if (business !== undefined){ %>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <% if (business[0] !== undefined){ %>
+        <a href="/businesses">Home</a>
+        <a href="/businesses/customers">Customers</a>
+        <a href="/businesses/transactions">Transactions</a>
+        <% } else { %> 
+            <% } %>
+        <a href="/auth/google" class='log'> Login with Google</a>
+        <a href="/logout" class='log'>Log Out</a>
+    </nav>
+    <main>
+
+<% if (business[0] !== undefined){ %>
     <% let incomeCounter = 0; %> 
     <% let expenseCounter = 0; %> 
     <h3 id='business-name'><%= business[0].name %></h3><br>
@@ -36,7 +58,7 @@
 
 <% } else { %> 
     <p>No business created.</p>
-    <a href="/businesses/new"> Create a business here</a>
+    <a href="/businesses/new" id='create-business'> Create a business here.</a>
 
 
 <% } %>
