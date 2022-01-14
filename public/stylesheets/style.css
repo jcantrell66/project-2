@@ -4,7 +4,7 @@ body {
 
 body > nav {
   grid-area: nav;
-  background-color: #B8C0C2;
+  background-color: #0c1c3a;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,8 @@ nav > a {
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
-  color: black;
+  color: rgb(183, 202, 226);
+  font-weight: bold;
 }
 
 nav > a:hover {

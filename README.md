@@ -5,10 +5,10 @@ This application is designed to help small businesses track their finances, incl
 #### Screenshots 
 
 Home page displayed upon logging in.
-<img src="https://imgur.com/QOTbuM8.png">
+<img src="https://imgur.com/pDbVQKm.png">
 
 Transactions page displayed upon entering income & expenses.
-<img src="https://imgur.com/ko0Z1HA.png">
+<img src="https://imgur.com/on7l2hE.png">
 
 #### Technologies Used
 
